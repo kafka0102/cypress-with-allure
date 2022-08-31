@@ -173,3 +173,10 @@ RUN wget https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandlin
 RUN unzip allure-commandline-2.19.0.zip
 RUN mv /allure-2.19.0 /allure
 ENV PATH="/allure/bin:${PATH}"
+
+RUN  apt-get update -y && \
+     apt-get upgrade -y && \
+     apt-get dist-upgrade -y && \
+     apt-get -y autoremove && \
+     apt-get clean \
+     apt-get install zip
