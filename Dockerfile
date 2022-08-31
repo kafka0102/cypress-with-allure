@@ -180,3 +180,9 @@ RUN  apt-get update -y && \
      apt-get -y autoremove && \
      apt-get clean \
      apt-get install zip
+     
+WORKDIR /root
+COPY package.json .
+RUN cypress version
+RUN npm install
+
